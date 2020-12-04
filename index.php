@@ -8,10 +8,17 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title>Login</title>
+        <link rel="stylesheet" href="multimedia/style.css"/> 
+        <link rel="icon" href="multimedia/img/primerLogo.svg" type="image/png"/> 
+        
     </head>
     <body>
-        <?php
-        
-        ?>
+        <!--<?php
+        include_once ("controlador/logicaFarm.php");
+
+        $logicaModelo = new logicaFarm();
+        $logicaModelo->saludar('Michael');
+        ?>-->
+        <a href="vista/moduloVista/home.php">home</a>
     </body>
 </html>

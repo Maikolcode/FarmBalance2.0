@@ -1,0 +1,102 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 1/12/2020, 05:42:30 PM
+    Author     : KOLEMAN78
+*/
+:root{
+    /*--sombras-cajas: 1px 2px 3px 1px rgba(1, 1, 1, 0.4);*/
+}
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+.contenedor-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(1, 1, 1, 0.65);
+    box-shadow: 1px 2px 3px 1px rgba(1, 1, 1, 0.4);
+    margin-bottom: 100px; 
+}
+.nav-logo{
+    display: flex;
+    margin-left: 15px;
+    width: 20%;
+}
+.nav-menu{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+}
+.nav-user{
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+    width: 20%;
+}
+.icono-usuario{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 300px;
+    background-color: rgba(255, 87, 51, 9);
+    font-weight: bold;
+}
+.modulo-uno, .modulo-dos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    margin: 0 10px;
+}
+.contenedor-footer{
+    width: 100%;
+    margin-top: 100px;
+    background-color: rgba(1, 1, 1, 0.65);
+    box-shadow: 3px 1px 2px 4px rgba(1, 1, 1, 0.4);
+    border-radius: 12px 12px 0 0;
+}
+.contenedor-columnas{
+   display: flex;
+   padding: 15px;
+   justify-content: space-around;
+   width: 98%;
+}
+.primera-columna,
+.segunda-columna,
+.tercera-columna{
+    display: flex;
+    width: 33%;
+    flex-direction: column;
+}
+.tercera-columna{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 10px 0;
+}
+.icono-redes{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 45px;
+    margin: 10px 0;
+    border-radius: 300px;
+    background-color: rgba(255, 87, 51, 9);
+    font-weight: bold;
+}

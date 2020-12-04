@@ -46,6 +46,5 @@ class Usuario{
     function setContraseña($contraseña) {
         $this->contraseña = $contraseña;
     }
-
-
+    
 }
