@@ -21,7 +21,7 @@
                         <img src="../../multimedia/img/farm.svg" style="height:60px; width: 65px; margin: 0 20px"/>
                         <p>Modulo 2</p>
                     </a>
-                    <a href="#" class="modulo-dos">
+                    <a href="../moduloVista/nosotros.php" class="modulo-dos">
                         <img src="../../multimedia/img/primerLogo.svg" style="height:60px; width: 65px; margin: 0 20px"/>
                         <p>Nosotros</p>
                     </a>
