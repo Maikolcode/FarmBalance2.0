@@ -19,7 +19,7 @@
                     <a href="#" class="icono-redes pulse" ><img src="../../multimedia/img/facebook.svg" style="height: 18px;width: 18px;"/></a>
                     <a href="#" class="icono-redes pulse" ><img src="../../multimedia/img/twitter.svg" style="height: 18px;width: 18px;"/></a>
                     <a href="#" class="icono-redes pulse" ><img src="../../multimedia/img/linkedin.svg" style="height: 18px;width: 18px;"/></a>
-                    <a href="#" class="icono-redes pulse" ><img src="../../multimedia/img/github.svg" style="height: 18px;width: 18px;"/></a>
+                    <a href="https://github.com/Maikolcode/FarmBalance2.0" target="_blank" class="icono-redes pulse" ><img src="../../multimedia/img/github.svg" style="height: 18px;width: 18px;"/></a>
                 </div>
             </div>
             <div class="copyright">

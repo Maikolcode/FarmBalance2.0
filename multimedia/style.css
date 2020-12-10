@@ -38,11 +38,13 @@ and open the template in the editor.
 }
 .nav-user{
     display: flex;
-    justify-content: flex-end;
-    margin-right: 30px;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin-right: 50px;
     width: 20%;
 }
-.icono-usuario{
+.boton-usuario{
     display: flex;
     text-align: center;
     align-items: center;
@@ -70,10 +72,10 @@ and open the template in the editor.
     border-radius: 12px 12px 0 0;
 }
 .contenedor-columnas{
-   display: flex;
-   padding: 15px;
-   justify-content: space-around;
-   width: 98%;
+    display: flex;
+    padding: 15px;
+    justify-content: space-around;
+    width: 98%;
 }
 .primera-columna,
 .segunda-columna,
@@ -115,7 +117,7 @@ and open the template in the editor.
     width: 45%;
 }
 .texto-farm{
-    font-weight: 350;
+    font-weight: 400;
     font-size: 20px;
     text-align: center;
 }
@@ -124,4 +126,52 @@ and open the template in the editor.
     font-weight: 500;
     font-size: 45px;
     text-align: center;
+}
+.nav{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.contenedor-opciones{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 87, 51, 0.89);
+    border-radius: 15px;
+    margin: 10px 0;
+    width: 120px;
+    box-shadow: 1px 2px 3px 1px rgba(1, 1, 1, 0.4);
+    
+}
+.nav-ul{
+    border-radius: 20px;
+}
+.nav > li {
+    float:left;
+    border-radius: 10px;
+}
+
+.nav li a {
+    text-decoration:none;
+    display:block;
+    padding: 10px 0 10px 10px;    
+    color: white;
+    
+}
+
+.nav a:hover {
+    transition: color .5s ease;
+    color: black;
+}
+
+.nav li ul {
+    display:none;
+    position:absolute;
+    transform: translateX(-35px);
+    transition: all .5s;
+}
+
+.nav li:hover > ul {
+    display:block;
 }

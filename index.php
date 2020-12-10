@@ -13,12 +13,13 @@ and open the template in the editor.
         
     </head>
     <body>
-        <!--<?php
+        <?php
         include_once ("controlador/logicaFarm.php");
 
         $logicaModelo = new logicaFarm();
         $logicaModelo->saludar('Michael');
-        ?>-->
+        ?>
         <a href="vista/moduloVista/home.php">home</a>
+        <a href="vista/paginasPublicas/recuperarContraseña.php">olvide la contraseña</a>
     </body>
 </html>

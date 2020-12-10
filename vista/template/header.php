@@ -27,12 +27,22 @@
                     </a>
                 </div>
                 <div class="nav-user" style="cursor: pointer">
-                    <p class="icono-usuario pulse">M P</p>
+                    <ul class="nav">
+                        <li><p class="boton-usuario pulse">M P</p>
+                            <ul>
+                                <div class="contenedor-opciones">
+                                    <li><a href="#">Michael Parra</a></li>
+                                    <li><a href="#">Inicio</a></li>
+                                    <li><a href="#">Cerrar sesión</a></li>
+                                </div>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-
+        <script src="../../multimedia/js/script.js">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </body>
 </html>
