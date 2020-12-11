@@ -34,7 +34,7 @@ try {
     $mail->Body = '<h3> Hey! ' . $nombre . ' Estas registrado en farmBalance y dijiste esto: ' . $mensaje.'</h3>';
 
     $mail->send();
-    echo 'Correo enviado exitosamente';
+    echo "correo enviado exitosamente";
 } catch (Exception $e) {
     echo "Correo no se puedo enviar: {$mail->ErrorInfo}";
 }

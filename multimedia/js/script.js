@@ -3,9 +3,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var instances = M.Parallax.init(elems);
 }); 
 
-function alertar(){
-    alert('fuking alert');
-}
+/*function alertarSw(){
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Something went wrong!',
+        footer: '<a href>Why do I have this issue?</a>'
+    });
+}*/
 
 
 
