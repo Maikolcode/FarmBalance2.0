@@ -1,12 +1,18 @@
 <?php
 
-class Usuario{
+class Usuario {
+
+    private $idUsuario;
     private $nombre;
     private $apellido;
     private $correo;
     private $numeroContacto;
     private $contraseña;
     
+    function getIdUsuario() {
+        return $this->idUsuario;
+    }
+
     function getNombre() {
         return $this->nombre;
     }
@@ -25,6 +31,10 @@ class Usuario{
 
     function getContraseña() {
         return $this->contraseña;
+    }
+
+    function setIdUsuario($idUsuario) {
+        $this->idUsuario = $idUsuario;
     }
 
     function setNombre($nombre) {
@@ -46,5 +56,7 @@ class Usuario{
     function setContraseña($contraseña) {
         $this->contraseña = $contraseña;
     }
-    
+
+
+
 }

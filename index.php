@@ -15,7 +15,7 @@
                         <img src="multimedia/img/segundoLogo.svg" class="imgLoginPage" style="height: 350px; width: 350px">
                     </div>
                 </div>
-                <form class="elementsForm" action="controlador/logicaFarm.php" method="post">
+                <form class="elementsForm">
                     <img src="multimedia/img/primerLogo.svg" style="height: 75px;width: 75px;"/>
                     <h4 class="sizeLogin">Iniciar sesión</h4>
                     <div class="marginDiv">
@@ -27,7 +27,7 @@
                         <input id="passField" type="password" class="inputUsu browser-default" maxlength="12">
                     </div>
                     <div class="marginDiv">
-                        <button id="iniciarSesion" class="btnLogin">Login</button>
+                        <button id="iniciarSesion" class="btnLogin"><a href="vista/moduloVista/home.php">Login</a></button>
                     </div>
                     <div class="marginDiv aStyle">
                         <a href="vista/paginasPublicas/registrarse.php" class="linksElement">¡Crear una cuenta!</a>
@@ -40,7 +40,7 @@
         <!--<a href="vista/moduloVista/home.php">home</a><br>
         <a href="vista/paginasPublicas/recuperarContraseña.php">olvide la contraseña</a><br>
         <a href="vista/paginasPublicas/registrarse.php">registarse</a><br>-->
-
+        <script src="multimedia/sweetalert2/sweetalert2.all.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </body>

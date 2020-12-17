@@ -3,11 +3,13 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+include ("sweet.php");
 require ("PHPMailer/Exception.php");
 require ("PHPMailer/PHPMailer.php");
 require ("PHPMailer/SMTP.php");
 
 $mail = new PHPMailer(true);
+$enviarMensaje = false;
 
 try {
     $nombre = $_POST["nombre"];
@@ -31,10 +33,23 @@ try {
     // coontenido del correo
     $mail->isHTML(true);
     $mail->Subject = 'Hola desde php';
-    $mail->Body = '<h3> Hey! ' . $nombre . ' Estas registrado en farmBalance y dijiste esto: ' . $mensaje.'</h3>';
-
-    $mail->send();
-    echo "correo enviado exitosamente";
+    $mail->Body = '<h3> Hey! ' . $nombre . ' Estas registrado en farmBalance y dijiste esto: ' . $mensaje . '</h3>';
+    
+    $enviarMensaje = $mail->send();
+    
+    if ($enviarMensaje == true) {
+        echo "<script>Swal.fire({
+                icon: 'success',
+                title: 'Correo',
+                text: 'Enviado exitosamente',
+            });</script>";
+    }
+    
 } catch (Exception $e) {
-    echo "Correo no se puedo enviar: {$mail->ErrorInfo}";
+    echo "Correo no se pudo enviar: {$mail->ErrorInfo}";
+    /*echo'<script type="text/javascript">
+            alert("Correo no enviado"' . $mail->ErrorInfo . ');
+            window.location.href="../vista/paginasPublicas/correoPrueba.php}";
+        </script>';*/
 }
+//window.location.href="index.php";
