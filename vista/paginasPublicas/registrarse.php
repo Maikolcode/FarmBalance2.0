@@ -26,7 +26,7 @@
                     </div>
                     <div class="marginDiv">
                         <p class="marginP">Correo</p>
-                        <input id="userField" type="text" name="correo" class="inputUsu browser-default" maxlength="20">
+                        <input id="userField" type="text" name="correo" class="inputUsu browser-default" maxlength="40">
                     </div>
                     <div class="marginDiv">
                         <p class="marginP">Telefono</p>

@@ -1,9 +1,14 @@
-<?php 
-    include '../../controlador/conectionDB.php';
-    include '../template/header.php';
-    
-    $sentencia = $conexion->query("SELECT * FROM farmbalance.usuario;");
-    $listaUsuario = $sentencia->fetchAll(PDO::FETCH_OBJ);
+<?php
+    session_start();
+    if(!isset($_SESSION['nombre'])){
+        header('location: ../../index.php');
+    }else if(isset ($_SESSION['nombre'])){
+        include '../../controlador/conectionDB.php';
+        include '../template/header.php';
+
+        $sentencia = $conexion->query("SELECT * FROM farmbalance.usuario;");
+        $listaUsuario = $sentencia->fetchAll(PDO::FETCH_OBJ);
+    }
 ?>
 <div class="row">
     <table>

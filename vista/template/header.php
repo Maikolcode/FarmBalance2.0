@@ -13,7 +13,7 @@
                     <a href="home.php"><img src="../../multimedia/img/segundoLogo.svg"/></a>
                 </div>
                 <div class="nav-menu">
-                    <a href="#" class="modulo-uno">
+                    <a href="../moduloVista/modulo1.php" class="modulo-uno">
                         <img src="../../multimedia/img/farmer.svg" style="height:60px; width: 65px; margin: 0 20px"/>
                         <p>Modulo 1</p>
                     </a>
@@ -31,9 +31,9 @@
                         <li><p class="boton-usuario pulse">M P</p>
                             <ul>
                                 <div class="contenedor-opciones">
-                                    <li><a href="#">Michael Parra</a></li>
-                                    <li><a href="#">Inicio</a></li>
-                                    <li><a href="#">Cerrar sesión</a></li>
+                                    <li><a href="#"><?php echo $_SESSION['nombre']." ".$_SESSION['apellido']?></a></li>
+                                    <li><a href="../moduloVista/home.php">Inicio</a></li>
+                                    <li><a href="../../controlador/cerrar.php">Cerrar sesión</a></li>
                                 </div>
                             </ul>
                         </li>

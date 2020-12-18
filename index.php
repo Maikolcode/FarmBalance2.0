@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(isset($_SESSION['nombre'])){
+        header('location: vista/moduloVista/home.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,19 +22,19 @@
                         <img src="multimedia/img/segundoLogo.svg" class="imgLoginPage" style="height: 350px; width: 350px">
                     </div>
                 </div>
-                <form class="elementsForm">
+                <form class="elementsForm" action="controlador/loginUser.php" method="post">
                     <img src="multimedia/img/primerLogo.svg" style="height: 75px;width: 75px;"/>
                     <h4 class="sizeLogin">Iniciar sesión</h4>
                     <div class="marginDiv">
                         <p class="marginP">Nombre Usuario</p>
-                        <input id="userField" type="text" class="inputUsu browser-default" maxlength="20">
+                        <input id="userField" type="text" name="nombre" class="inputUsu browser-default" maxlength="20">
                     </div>
                     <div class="marginDiv">
                         <p class="marginP">Contraseña</p>
-                        <input id="passField" type="password" class="inputUsu browser-default" maxlength="12">
+                        <input id="passField" type="password" name="contrasenia" class="inputUsu browser-default" maxlength="12">
                     </div>
                     <div class="marginDiv">
-                        <button id="iniciarSesion" class="btnLogin"><a href="vista/moduloVista/home.php">Login</a></button>
+                        <button id="iniciarSesion" class="btnLogin">Login</button>
                     </div>
                     <div class="marginDiv aStyle">
                         <a href="vista/paginasPublicas/registrarse.php" class="linksElement">¡Crear una cuenta!</a>
