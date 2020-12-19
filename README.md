@@ -1,4 +1,4 @@
-# FarmBalance2.0 
+# Farm Balance 
 
 
 <img src="multimedia/img/primerLogo.svg"></img> 
@@ -126,5 +126,5 @@ CREATE TABLE IF NOT EXISTS FarmBalance.Animal (
     
 ENGINE = InnoDB;
 
-
+-------------------------------------------------
 <img src="multimedia/img/segundoLogo.svg"></img> 
