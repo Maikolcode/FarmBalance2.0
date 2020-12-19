@@ -1,4 +1,9 @@
-# FarmBalance2.0
+# FarmBalance2.0 
+
+
+<img src="multimedia/img/primerLogo.svg"></img> 
+
+
 Código libre y educativo en PHP
 --------------------------------------------
 Si deseas implementar nuestra base de datos te facilitamos algunos `Querys en MySql`
@@ -120,3 +125,5 @@ CREATE TABLE IF NOT EXISTS FarmBalance.Animal (
     ON UPDATE NO ACTION)
     
 ENGINE = InnoDB;
+
+<img src="multimedia/img/segundoLogo.svg"></img> 
