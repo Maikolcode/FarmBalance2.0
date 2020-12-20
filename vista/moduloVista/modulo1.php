@@ -26,6 +26,7 @@ if (!isset($_SESSION['nombre'])) {
                             <span><?= $animal->pesoAnimal ?> Kg</span>
                             <span>$ <?= $animal->pesoVenta ?></span>
                             <span>Quedan: <?= $animal->cantidadAnimal . " " . $animal->nombreAnimal ?>s </span>
+                            <span>Ganancias: $ <?= ($animal->pesoVenta * $animal->cantidadAnimal)?> </span>
                         </div>
                     </a>
                 </div>

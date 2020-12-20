@@ -15,11 +15,11 @@
                 <div class="nav-menu">
                     <a href="../moduloVista/modulo1.php" class="modulo-uno">
                         <img src="../../multimedia/img/farmer.svg" style="height:60px; width: 65px; margin: 0 20px"/>
-                        <p>Modulo 1</p>
+                        <p>Animales</p>
                     </a>
-                    <a href="#" class="modulo-dos">
+                    <a href="../moduloVista/modulo2.php" class="modulo-dos">
                         <img src="../../multimedia/img/farm.svg" style="height:60px; width: 65px; margin: 0 20px"/>
-                        <p>Modulo 2</p>
+                        <p>Productos</p>
                     </a>
                     <a href="../moduloVista/nosotros.php" class="modulo-dos">
                         <img src="../../multimedia/img/primerLogo.svg" style="height:60px; width: 65px; margin: 0 20px"/>
