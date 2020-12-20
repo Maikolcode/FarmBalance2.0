@@ -1,13 +1,17 @@
 <?php
 
+
+private $pdo;
+
 class Usuario {
 
     private $idUsuario;
     private $nombre;
     private $apellido;
     private $correo;
-    private $numeroContacto;
+    private $telefono
     private $contraseña;
+    private $idFuncionIndustria;
     
     function getIdUsuario() {
         return $this->idUsuario;
@@ -17,22 +21,42 @@ class Usuario {
         return $this->nombre;
     }
 
-    function getApellido() {
-        return $this->apellido;
-    }
+	public function __CONSTRUCT()
+	{
+		try
+		{
+			$this->pdo = Database::StartUp();     
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 
-    function getCorreo() {
-        return $this->correo;
-    }
+	public function Listar()
+	{
+		try
+		{
+			$result = array();
 
-    function getNumeroContacto() {
-        return $this->numeroContacto;
-    }
+			$stm = $this->pdo->prepare("SELECT * FROM usuario");
+			$stm->execute();
 
-    function getContraseña() {
-        return $this->contraseña;
-    }
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 
+	public function Obtener($idUsuario)
+	{
+		try 
+		{
+			$stm = $this->pdo
+			          ->prepare("SELECT * FROM usuario WHERE idUsuario = ?");
+			          
     function setIdUsuario($idUsuario) {
         $this->idUsuario = $idUsuario;
     }
@@ -41,18 +65,105 @@ class Usuario {
         $this->nombre = $nombre;
     }
 
-    function setApellido($apellido) {
-        $this->apellido = $apellido;
-    }
+			$stm->execute(array($idUsuario));
+			return $stm->fetch(PDO::FETCH_OBJ);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
 
-    function setCorreo($correo) {
-        $this->correo = $correo;
-    }
+	public function logear($idUsuario)
+	{
+		try 
+		{
+			$stm = $this->pdo
+			          ->prepare("SELECT * FROM usuario WHERE correo = ? AND contraseña = ?");
+			          
 
-    function setNumeroContacto($numeroContacto) {
-        $this->numeroContacto = $numeroContacto;
-    }
+			$stm->execute(array($idUsuario));
+			return $stm->fetch(PDO::FETCH_OBJ);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
 
+	public function Eliminar($idUsuario)
+	{
+		try 
+		{
+			$stm = $this->pdo
+			            ->prepare("DELETE FROM usuario WHERE idUsuario = ?");			          
+
+			$stm->execute(array($idUsuario));
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
+
+	public function Actualizar($data)
+	{
+		try 
+		{
+			$sql = "UPDATE usuario SET 
+							idUsuario  	             = ?,
+							nombreUsuario            = ?, 
+							apellidoUsuario          = ?,
+                        	correo                   = ?,
+                        	telefono                 = ?,
+                            contraseña               = ?,
+                            idFuncionIndustria       = ?
+						
+				    WHERE idUsuario = ?";
+
+			$this->pdo->prepare($sql)
+			     ->execute(
+				    array(
+				    	$data->idUsuario , 
+                        $data->nombre,                        
+                        $data->apellido,
+                        $data->correo,
+                        $data->telefono, 
+                        $data->contraseña, 
+                        $data->idFuncionIndustria, 
+                       
+					)
+				);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
+
+	public function Registrar(usuario $data)
+	{
+		try 
+		{
+		$sql = "INSERT INTO usuario (idUsuario ,nombreUsuario, apellidoUsuario ,correo , telefono, contraseña, idFuncionIndustria  ) 
+		        VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+		$this->pdo->prepare($sql)
+		     ->execute(
+				array(
+						$data->idUsuario, 
+                        $data->nombre,                        
+                        $data->apellido,
+                        $data->correo,
+                        $data->telefono,
+                        $data->contraseña,
+                        $data->idFuncionIndustria
+                   
+                )
+			);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
+}
+=======
     function setContraseña($contraseña) {
         $this->contraseña = $contraseña;
     }
