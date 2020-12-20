@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="../../multimedia/style.css"/> 
         <link rel="icon" href="../../multimedia/img/primerLogo.svg" type="image/png"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <script src="../../multimedia/sweetalert2/sweetalert2.all.min.js"></script>
     </head>
     <body>
         <div class="contenedor-correo">
@@ -31,7 +32,8 @@
                 </div>
             </div>
         </div>
-        <script src="../../multimedia/js/script.js"></script>    
+        </script>
+        <script src="../../multimedia/js/script.js"></script>  
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     </body>
 </html>

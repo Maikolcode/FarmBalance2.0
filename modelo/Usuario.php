@@ -1,8 +1,10 @@
 <?php
 
-class Usuario{
 
-    private $pdo;
+private $pdo;
+
+class Usuario {
+
     private $idUsuario;
     private $nombre;
     private $apellido;
@@ -11,8 +13,13 @@ class Usuario{
     private $contraseña;
     private $idFuncionIndustria;
     
-    
-  
+    function getIdUsuario() {
+        return $this->idUsuario;
+    }
+
+    function getNombre() {
+        return $this->nombre;
+    }
 
 	public function __CONSTRUCT()
 	{
@@ -50,6 +57,13 @@ class Usuario{
 			$stm = $this->pdo
 			          ->prepare("SELECT * FROM usuario WHERE idUsuario = ?");
 			          
+    function setIdUsuario($idUsuario) {
+        $this->idUsuario = $idUsuario;
+    }
+
+    function setNombre($nombre) {
+        $this->nombre = $nombre;
+    }
 
 			$stm->execute(array($idUsuario));
 			return $stm->fetch(PDO::FETCH_OBJ);
@@ -148,4 +162,12 @@ class Usuario{
 			die($e->getMessage());
 		}
 	}
+}
+=======
+    function setContraseña($contraseña) {
+        $this->contraseña = $contraseña;
+    }
+
+
+
 }
