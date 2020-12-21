@@ -111,7 +111,7 @@ if (!isset($_SESSION['nombre'])) {
             </div>
         </div>
         <div class="parallax-container" style="height: 200px">
-            <div class="parallax"><img src="../../multimedia/img/img-parallax.jpg" style="width:100%;"></div>
+            <div class="parallax"><img src="../../multimedia/img/home.jpg" style="width:100%;"></div>
         </div>
         <div class="opciones-modulos">
             <div class="contenedor-modulos">
@@ -126,6 +126,7 @@ if (!isset($_SESSION['nombre'])) {
                             <a href="modulo1.php" style="margin: 20px 0" >Consultar Animales</a>
                             <a href="modulo1.php" style="margin: 20px 0">Consultar Productos</a>
                         </div>
+                        <img src="../../multimedia/img/personBuy.svg" style="height: 100px; width: 100px">
                     </div>
                     <div class="modulo-consulta">
                         <h3>Comencemos con cuantos y cuales animales</h3>

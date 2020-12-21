@@ -1,15 +1,11 @@
 <?php
-
-
-private $pdo;
-
 class Usuario {
-
+    private $pdo;
     private $idUsuario;
     private $nombre;
     private $apellido;
     private $correo;
-    private $telefono
+    private $telefono;
     private $contraseña;
     private $idFuncionIndustria;
     
@@ -162,12 +158,7 @@ class Usuario {
 			die($e->getMessage());
 		}
 	}
-}
-=======
-    function setContraseña($contraseña) {
+    function setContraseña($contraseña){
         $this->contraseña = $contraseña;
     }
-
-
-
 }
