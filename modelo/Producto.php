@@ -1,12 +1,12 @@
 <?php
-class industria
+class producto
 {
 
 	private $pdo;
     
-    public $idFuncionIndustria;
-    public $nombreFuncion;
-    public $categoria;
+    public $idProductosConsumo;
+    public $nombreProducto;
+    public $precioProducto;
     
 
 	public function __CONSTRUCT()
@@ -27,7 +27,7 @@ class industria
 		{
 			$result = array();
 
-			$stm = $this->pdo->prepare("SELECT * FROM funcion_industria");
+			$stm = $this->pdo->prepare("SELECT * FROM productos_consumo");
 			$stm->execute();
 
 			return $stm->fetchAll(PDO::FETCH_OBJ);
@@ -38,15 +38,15 @@ class industria
 		}
 	}
 
-	public function Obtener($idFuncionIndustria)
+	public function Obtener($idProducto)
 	{
 		try 
 		{
 			$stm = $this->pdo
-			          ->prepare("SELECT * FROM funcion_industria WHERE idFuncionIndustria = ?");
+			          ->prepare("SELECT * FROM productos_consumo WHERE idProductosConsumo = ?");
 			          
 
-			$stm->execute(array($idFuncionIndustria));
+			$stm->execute(array($idProducto));
 			return $stm->fetch(PDO::FETCH_OBJ);
 		} catch (Exception $e) 
 		{
@@ -54,14 +54,14 @@ class industria
 		}
 	}
 
-	public function Eliminar($idFuncionIndustria)
+	public function Eliminar($idProducto)
 	{
 		try 
 		{
 			$stm = $this->pdo
-			            ->prepare("DELETE FROM funcion_industria WHERE idFuncionIndustria = ?");			          
+			            ->prepare("DELETE FROM productos_consumo WHERE idProductosConsumo = ?");			          
 
-			$stm->execute(array($idFuncionIndustria));
+			$stm->execute(array($idProducto));
 		} catch (Exception $e) 
 		{
 			die($e->getMessage());
@@ -72,19 +72,19 @@ class industria
 	{
 		try 
 		{
-			$sql = "UPDATE funcion_industria SET 
-							idFuncionIndustria  	      = ?,
-							nombreFuncion         = ?, 
-                            categoria       = ?
+			$sql = "UPDATE productos_consumo SET 
+							idProductosConsumo   	      = ?,
+							nombeProducto         = ?, 
+                            precioProducto        = ?
 							
                         	
-				    WHERE idFuncionIndustria = ?";
+				    WHERE idProductosConsumo = ?";
 
 			$this->pdo->prepare($sql)
 			     ->execute(
 				    array(
-				    	$data->idFuncionIndustria, 
-                        $data->nombreFuncion,                        
+				    	$data->idProductosConsumo, 
+                        $data->nombeProducto,                        
                         $data->precioProductol,
                         
                        
@@ -96,19 +96,19 @@ class industria
 		}
 	}
 
-	public function Registrar(industria $data)
+	public function Registrar(producto $data)
 	{
 		try 
 		{
-		$sql = "INSERT INTO funcion_industria (idFuncionIndustria ,nombreFuncion,categoria) 
+		$sql = "INSERT INTO productos_consumo (idProductosConsumo ,nombeProducto,precioProducto) 
 		        VALUES (?, ?, ?)";
 
 		$this->pdo->prepare($sql)
 		     ->execute(
 				array(
-						$data->idFuncionIndustria, 
-                        $data->nombreFuncion,                        
-                        $data->categoria,
+						$data->idProductosConsumo, 
+                        $data->nombeProducto,                        
+                        $data->precioProducto,
                    
                 )
 			);

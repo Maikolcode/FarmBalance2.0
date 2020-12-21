@@ -2,56 +2,139 @@
 
 class Animal {
 
+	private $pdo;
+
+    private $idAnimal;
     private $nombreAnimal;
-    private $pesoPromedio;
-    private $precioVenta;
-    private $edadAnimal;
-    private $cantidad;
+    private $semanaVenta;
+    private $idProductoConsumo;
+    private $costoAlimentacionSemanal;
+    private $costoVacunasSemanal;
+    private $costohabita;
+    private $costoPurgasSemanal;
     
-    public function __construct() {
-        
-    }
-    
-    function getNombreAnimal() {
-        return $this->nombreAnimal;
-    }
+ 
 
-    function getPesoPromedio() {
-        return $this->pesoPromedio;
-    }
+	public function __CONSTRUCT()
+	{
+		try
+		{
+			$this->pdo = Database::StartUp();     
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 
-    function getPrecioVenta() {
-        return $this->precioVenta;
-    }
+	public function Listar()
+	{
+		try
+		{
+			$result = array();
 
-    function getEdadAnimal() {
-        return $this->edadAnimal;
-    }
+			$stm = $this->pdo->prepare("SELECT * FROM animal");
+			$stm->execute();
 
-    function getCantidad() {
-        return $this->cantidad;
-    }
+			return $stm->fetchAll(PDO::FETCH_OBJ);
+		}
+		catch(Exception $e)
+		{
+			die($e->getMessage());
+		}
+	}
 
-    function setNombreAnimal($nombreAnimal) {
-        $this->nombreAnimal = $nombreAnimal;
-    }
+	public function Obtener($idAnimal)
+	{
+		try 
+		{
+			$stm = $this->pdo
+			          ->prepare("SELECT * FROM animal WHERE idAnimal = ?");
+			          
 
-    function setPesoPromedio($pesoPromedio) {
-        $this->pesoPromedio = $pesoPromedio;
-    }
+			$stm->execute(array($idAnimal));
+			return $stm->fetch(PDO::FETCH_OBJ);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
 
-    function setPrecioVenta($precioVenta) {
-        $this->precioVenta = $precioVenta;
-    }
+	public function Eliminar($idAnimal)
+	{
+		try 
+		{
+			$stm = $this->pdo
+			            ->prepare("DELETE FROM animal WHERE idAnimal = ?");			          
 
-    function setEdadAnimal($edadAnimal) {
-        $this->edadAnimal = $edadAnimal;
-    }
+			$stm->execute(array($idAnimal));
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
 
-    function setCantidad($cantidad) {
-        $this->cantidad = $cantidad;
-    }
+	public function Actualizar($data)
+	{
+		try 
+		{
+			$sql = "UPDATE animal SET 
+							idAnimal  	      = ?,
+							nombreAnimal        = ?, 
+                            semanaVenta      = ?,
+							idProductoConsumo        = ?,
+							costoAlimentacionSemanal        = ?,
+							costoVacunasSemanal        = ?,
+							costohabita        = ?,
+							costoPurgasSemanal 	=?
+                        	
+				    WHERE idAnimal = ?";
 
+			$this->pdo->prepare($sql)
+			     ->execute(
+				    array(
+				    	$data->idAnimal, 
+                        $data->nombreAnimal,                        
+						$data->semanaVenta,
+						$data->idProductoConsumo, 
+						$data->costoAlimentacionSemanal, 
+						$data->costoVacunasSemanal , 
+						$data->costohabita , 
+						$data->costoPurgasSemanal, 
 
+                       
+					)
+				);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
 
+	public function Registrar(Animal $data)
+	{
+		try 
+		{
+		$sql = "INSERT INTO animal (idAnimal , nombreAnimal, semanaVenta, idProductoConsumo, costoAlimentacionSemanal, costoVacunasSemana, ostohabita, costoPurgasSemanal ) 
+		        VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+		$this->pdo->prepare($sql)
+		     ->execute(
+				array(
+					$data->idAnimal, 
+					$data->nombreAnimal,                        
+					$data->semanaVenta,
+					$data->idProductoConsumo, 
+					$data->costoAlimentacionSemanal, 
+					$data->costoVacunasSemanal , 
+					$data->costohabita , 
+					$data->costoPurgasSemanal, 
+                   
+                )
+			);
+		} catch (Exception $e) 
+		{
+			die($e->getMessage());
+		}
+	}
 }
