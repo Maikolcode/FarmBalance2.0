@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     </head>
     <body>
+        <p style="font-size: 25px"></p>
         <main class="mainPage">
             <section class="secLogin">
                 <div class="imageLogin">

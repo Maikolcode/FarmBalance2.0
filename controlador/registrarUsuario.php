@@ -33,8 +33,16 @@ try {
     $mail->addAddress($correo, $nombre);
     // coontenido del correo
     $mail->isHTML(true);
-    $mail->Subject ='Bienvenido!';
-    $mail->Body = '<h4> Hey! ' . $nombre . ' te damos la bienvenida a farm balance</h4>';
+    $mail->Subject ='Registro en farm balance';
+    $mail->Body = '<div>
+                    <p style="font-size:40px;color:rgba(255, 87, 51, 9);">¡Te damos la bienvenida a Farm Balance!</p>
+                    <br>
+                    <hr>
+                    <img src="https://img.freepik.com/vector-gratis/bienvenido-letras-burbuja-dialogo-origami-amarillo-triangulos_1262-11380.jpg?size=338&ext=jpg" />
+                    <br>
+                    <hr>
+                    <p style="font-size: 25px">Hola <b>'.$nombre.'</b>, esperamos que disfrutes de nuestro gran sistema de información</p>
+                </div>';
 
     $mail->send();
 

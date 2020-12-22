@@ -4,13 +4,17 @@ if (!isset($_SESSION['nombre'])) {
     header('location: ../../index.php');
 } else if (isset($_SESSION['nombre'])) {
     include '../../controlador/conectionDB.php';
-    include '../template/header.php';
 
     $sentencia = $conexion->query("SELECT * FROM farmbalance.animal;");
     $listaAnimales = $sentencia->fetchAll(PDO::FETCH_OBJ);
 }
 ?>
 <head>
+    <title>Animales</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../multimedia/style.css"/> 
+    <link rel="icon" href="../../multimedia/img/primerLogo.svg" type="image/png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <style>
         .contenedor-tarjetas{
             display: grid;
@@ -31,9 +35,12 @@ if (!isset($_SESSION['nombre'])) {
         .contenedor-animales{
             width: 95%;
         }
-        
+
     </style>
 </head>
+<?php
+include ("../template/header.php");
+?>
 <section class="seccion-animales" id="portfolio">
     <div class="contenedor-animales">
         <div class="row">
